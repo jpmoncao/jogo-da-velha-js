@@ -9,17 +9,24 @@
 </head>
 
 <body>
-    <div class="velha">
-        <button class="quadrado x" id="btn-1" onclick="(this) => marcarQuadrado(this)"></button>
-        <button class="quadrado" id="btn-2" onclick="(this) => marcarQuadrado(this)"></button>
-        <button class="quadrado o" id="btn-3" onclick="(this) => marcarQuadrado(this)"></button>
-        <button class="quadrado" id="btn-4" onclick="(this) => marcarQuadrado(this)"></button>
-        <button class="quadrado" id="btn-5" onclick="(this) => marcarQuadrado(this)"></button>
-        <button class="quadrado" id="btn-6" onclick="(this) => marcarQuadrado(this)"></button>
-        <button class="quadrado" id="btn-7" onclick="(this) => marcarQuadrado(this)"></button>
-        <button class="quadrado" id="btn-8" onclick="(this) => marcarQuadrado(this)"></button>
-        <button class="quadrado" id="btn-9" onclick="(this) => marcarQuadrado(this)"></button>
+    <div id="card-resultado" class="x">
+        <h1>Vez do jogador:</h1>
+        <p>VERMELHO (X)</p>
     </div>
+
+    <div class="velha">
+        <button class="quadrado" id="btn-1" onclick="marcarQuadrado(this)"></button>
+        <button class="quadrado" id="btn-2" onclick="marcarQuadrado(this)"></button>
+        <button class="quadrado" id="btn-3" onclick="marcarQuadrado(this)"></button>
+        <button class="quadrado" id="btn-4" onclick="marcarQuadrado(this)"></button>
+        <button class="quadrado" id="btn-5" onclick="marcarQuadrado(this)"></button>
+        <button class="quadrado" id="btn-6" onclick="marcarQuadrado(this)"></button>
+        <button class="quadrado" id="btn-7" onclick="marcarQuadrado(this)"></button>
+        <button class="quadrado" id="btn-8" onclick="marcarQuadrado(this)"></button>
+        <button class="quadrado" id="btn-9" onclick="marcarQuadrado(this)"></button>
+    </div>
+
+    <button id="reiniciar" onclick="location.reload()">Reiniciar jogo</button>
 
     <script src="script.js"></script>
 </body>

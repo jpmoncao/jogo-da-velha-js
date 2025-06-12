@@ -2,9 +2,44 @@ body {
     width: 100vw;
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 2rem;
+
+    font-family: Arial, Helvetica, sans-serif;
     overflow: hidden;
+
+    #card-resultado {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 18px;
+
+        border: 1px solid;
+        border-radius: 12px;
+        box-shadow: 0px 4px rgba(0, 0, 0, 0.3);
+
+        h1,
+        p {
+            margin: 0;
+        }
+
+        &.x {
+
+            p {
+                color: #ff6b6b;
+            }
+        }
+
+        &.o {
+            p {
+                color: #6b7aff;
+            }
+        }
+    }
 
     .velha {
         display: grid;
@@ -16,7 +51,11 @@ body {
 
         .quadrado {
             cursor: pointer;
+
             background-color: #f2f2f5;
+            font-weight: bold;
+            font-size: 92px;
+
             width: 128px;
             height: 128px;
 
@@ -35,17 +74,17 @@ body {
 
                 &:hover,
                 &:active {
-                    box-shadow: 0px 0px 16px rgba(255, 0, 0, 0.5) inset;
+                    box-shadow: 0px 0px 8px rgba(255, 0, 0, 0.75) inset;
                 }
             }
 
             &.o {
                 cursor: default;
                 color: #6b7aff;
-                
+
                 &:hover,
                 &:active {
-                    box-shadow: 0px 0px 16px rgba(0, 68, 255, 0.5) inset;
+                    box-shadow: 0px 0px 8px rgba(0, 68, 255, 0.75) inset;
                 }
             }
         }
@@ -88,6 +127,23 @@ body {
         #btn-8,
         #btn-9 {
             border-bottom: none;
+        }
+    }
+
+    #reiniciar {
+        cursor: pointer;
+        outline: none;
+        border: 1px solid;
+        border-radius: 4px;
+        box-shadow: 0px 3px rgba(0, 0, 0, 0.2);
+        padding: 6px 12px;
+        margin-top: 8px;
+        transition-duration: 0.3s;
+
+        &:hover {
+            background-color: #999999;
+            box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.2);
+            transition-duration: 0.3s;
         }
     }
 }
