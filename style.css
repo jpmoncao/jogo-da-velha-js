@@ -29,16 +29,39 @@ body {
 
         &.x {
 
+            h1,
             p {
                 color: #ff6b6b;
             }
         }
 
         &.o {
+
+            h1,
             p {
                 color: #6b7aff;
             }
         }
+    }
+
+    #linha-vitoria {
+        position: absolute;
+        height: 6px;
+        width: 6px;
+        border-radius: 6px;
+        transform-origin: center;
+        transition: all 0.3s ease-in-out;
+        display: none;
+        z-index: 999;
+
+        &.x {
+            background-color: #ff6b6b;
+        }
+
+        &.o {
+            background-color: #6b7aff;
+        }
+
     }
 
     .velha {
@@ -48,6 +71,7 @@ body {
         width: fit-content;
         box-shadow: 0px 4px 4px 4px rgba(0, 0, 0, 0.3);
         border-radius: 12px;
+        z-index: 1;
 
         .quadrado {
             cursor: pointer;

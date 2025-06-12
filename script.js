@@ -35,9 +35,9 @@ const trocarVez = () => {
 const analisarVitoria = () => {
     let terminou = false;
 
-    condicoesVitoria.forEach(condicao => {
+    condicoesVitoria.forEach((condicao, index) => {
         if (condicao.every(item => tentativas[either].includes(item))) {
-            terminarJogo(either, condicao)
+            terminarJogo(either, index)
             terminou = true;
         }
     })
@@ -54,6 +54,8 @@ const terminarJogo = (vitoria, condicao) => {
     document.querySelectorAll('.quadrado').forEach(btn => {
         btn.disabled = true
     });
+
+    desenharLinhaVitoria(vitoria, condicao)
 }
 
 const terminarJogoEmVelha = () => {
@@ -64,6 +66,62 @@ const terminarJogoEmVelha = () => {
     document.querySelectorAll('.quadrado').forEach(btn => {
         btn.disabled = true
     });
+}
+
+function desenharLinhaVitoria(vitoria, condicao) {
+    const linha = document.getElementById("linha-vitoria");
+    linha.classList.add(vitoria)
+    linha.style.display = "block";
+
+    console.log({
+        condicao,
+        medida: (document.querySelector('#btn-1').getBoundingClientRect().x) + 'px'
+    })
+
+    switch (condicao) {
+        case 0:
+            linha.style.top = (document.querySelector('#btn-1').getBoundingClientRect().y + 72) + 'px';
+            linha.style.left = (document.querySelector('#btn-1').getBoundingClientRect().x) + 'px';
+            linha.style.width = "396px";
+            break;
+        case 1:
+            linha.style.top = (document.querySelector('#btn-4').getBoundingClientRect().y + 72) + 'px';
+            linha.style.left = (document.querySelector('#btn-1').getBoundingClientRect().x) + 'px';
+            linha.style.width = "396px";
+            break;
+        case 2:
+            linha.style.top = (document.querySelector('#btn-7').getBoundingClientRect().y + 72) + 'px';
+            linha.style.left = (document.querySelector('#btn-1').getBoundingClientRect().x) + 'px';
+            linha.style.width = "396px";
+            break;
+        case 3:
+            linha.style.top = (document.querySelector('#btn-1').getBoundingClientRect().y + 16) + 'px';
+            linha.style.left = (document.querySelector('#btn-1').getBoundingClientRect().x + 68) + 'px';
+            linha.style.height = "384px";
+            break;
+        case 4:
+            linha.style.top = (document.querySelector('#btn-1').getBoundingClientRect().y + 16) + 'px';
+            linha.style.left = (document.querySelector('#btn-2').getBoundingClientRect().x + 68) + 'px';
+            linha.style.height = "384px";
+            break;
+        case 5:
+            linha.style.top = (document.querySelector('#btn-1').getBoundingClientRect().y + 16) + 'px';
+            linha.style.left = (document.querySelector('#btn-3').getBoundingClientRect().x + 68) + 'px';
+            linha.style.height = "384px";
+            break;
+        case 6:
+            linha.style.top = (document.querySelector('#btn-1').getBoundingClientRect().y - 70) + 'px';
+            linha.style.left = (document.querySelector('#btn-2').getBoundingClientRect().x + 68) + 'px';
+            linha.style.height = "540px";
+            linha.style.transform = "rotate(-45deg)";
+            break;
+        case 7:
+            linha.style.top = (document.querySelector('#btn-1').getBoundingClientRect().y - 70) + 'px';
+            linha.style.left = (document.querySelector('#btn-2').getBoundingClientRect().x + 68) + 'px';
+            linha.style.height = "540px";
+            linha.style.transform = "rotate(45deg)";
+            break;
+    }
 }
 
 const marcarQuadrado = (elem) => {
